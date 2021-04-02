@@ -52,12 +52,10 @@ public class GraphicsDisplay extends JPanel {
         axisStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT,
                 BasicStroke.JOIN_MITER, 10.0f, null, 0.0f);
         // Перо для рисования контуров маркеров
-        markerStroke = new BasicStroke(2.0f, BasicStroke.CAP_BUTT,
+        markerStroke = new BasicStroke(1.0f, BasicStroke.CAP_BUTT,
                 BasicStroke.JOIN_MITER, 10.0f, null, 0.0f);
         // Шрифт для подписей осей координат
         axisFont = new Font("Serif", Font.BOLD, 36);
-
-
     }
 
     // Данный метод вызывается из обработчика элемента меню "Открыть файл с графиком"
@@ -166,7 +164,7 @@ public class GraphicsDisplay extends JPanel {
         // Выбрать линию для рисования графика
         canvas.setStroke(graphicsStroke);
         // Выбрать цвет линии
-        canvas.setColor(Color.BLACK);
+        canvas.setColor(Color.RED);
         /* Будем рисовать линию графика как путь, состоящий из множества сегментов (GeneralPath)
          * Начало пути устанавливается в первую точку графика, после чего прямой соединяется со
          * следующими точками
@@ -193,8 +191,11 @@ public class GraphicsDisplay extends JPanel {
         int valueFuncInt = point[1].intValue();
         double AverageValueSum = 0;
         double AverageValue=0;
+        for (int i = 0;i<graphicsData.length;i++)
+            System.out.println(graphicsData[i][1]);
         for (int i = 0; i < graphicsData.length; i++) {
             AverageValueSum += graphicsData[i][1];
+
             }
         AverageValue=AverageValueSum/graphicsData.length;
 
@@ -205,9 +206,9 @@ public class GraphicsDisplay extends JPanel {
         // Шаг 1 - Установить специальное перо для черчения контуров маркеров
         canvas.setStroke(markerStroke);
         // Выбрать красный цвета для контуров маркеров
-        canvas.setColor(Color.RED);
+        canvas.setColor(Color.BLACK);
         // Выбрать красный цвет для закрашивания маркеров внутри
-        canvas.setPaint(Color.RED);
+        canvas.setPaint(Color.BLACK);
 
         // Шаг 2 - Организовать цикл по всем точкам графика
         for (Double[] point : graphicsData) {

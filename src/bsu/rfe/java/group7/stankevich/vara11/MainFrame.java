@@ -160,7 +160,7 @@ Double.SIZE/8 байт;
             //  определяется загруженностью данных
             showAxisMenuItem.setEnabled(fileLoaded);
             showMarkersMenuItem.setEnabled(fileLoaded);
-
+            showIntGraphicsMenuItem.setEnabled(fileLoaded);
 
         }
 
