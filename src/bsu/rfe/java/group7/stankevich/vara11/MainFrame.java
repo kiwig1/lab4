@@ -28,6 +28,7 @@ public class MainFrame extends JFrame {
     // Пункты меню
     private JCheckBoxMenuItem showAxisMenuItem;
     private JCheckBoxMenuItem showMarkersMenuItem;
+    private JCheckBoxMenuItem showIntGraphicsMenuItem;
     // Компонент-отображатель графика
     private GraphicsDisplay display = new GraphicsDisplay();
     // Флаг, указывающий на загруженность данных графика
@@ -159,6 +160,8 @@ Double.SIZE/8 байт;
             //  определяется загруженностью данных
             showAxisMenuItem.setEnabled(fileLoaded);
             showMarkersMenuItem.setEnabled(fileLoaded);
+
+
         }
 
         // Обработчик, вызываемый после того, как меню исчезло с экрана
